@@ -18,4 +18,4 @@ const displayRandomUser = user=>{
         userContainer.appendChild(userDiv);
     }
 }
-randomUser();
+// randomUser();
