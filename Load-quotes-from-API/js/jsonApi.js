@@ -12,6 +12,5 @@ const displayJsonApi = (jsonApis) => {
         jsonData.appendChild(createOrderList);
     }
 };
-
 // Call the loadJsonApi function
 // loadJsonApi();
