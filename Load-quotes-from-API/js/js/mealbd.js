@@ -27,14 +27,14 @@ const displayMeals = meals =>{
         `
         mealContainer.appendChild(mealDiv);
     });
-}
+};
 
 const searchFood = ()=>{
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     loadMEals(searchText);
     searchField.value = '';
-}
+};
 const loadMealDetails = (idMeal)=>{
     // console.log("meal id", idMeal);
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`
@@ -42,7 +42,7 @@ const loadMealDetails = (idMeal)=>{
     fetch(url)
     .then(res => res.json())
     .then(data => displayMealDetails(data.meals[0]))
-}
+};
 
 const displayMealDetails = meal=>{
     const displayMealContainer = document.getElementById('display-meal-container');
@@ -53,15 +53,13 @@ const displayMealDetails = meal=>{
     createDiv.innerHTML = `
         <img src="${meal.strMealThumb}" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">${meal.strMeal}</h5>
-            <p class="card-text">Meal-Id: ${meal.idMeal}</p>
+            <h5 class="card-title">Meal Title: ${meal.strMeal}</h5>
             <p class="card-text">Meal-Id: ${meal.idMeal}</p>
             <p class="card-text">Meal-Category: ${meal.strCategory}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     
     `;
     displayMealContainer.appendChild(createDiv);
-}
+};
 
 loadMEals('a');
