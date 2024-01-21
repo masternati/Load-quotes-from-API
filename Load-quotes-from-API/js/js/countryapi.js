@@ -45,7 +45,5 @@ const displayCountryDetails = country =>{
         <img src="${country.flags.png}" alt="">
     `
 
-
-}
-
+};
 countryApi();
